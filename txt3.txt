@@ -1,0 +1,9 @@
+global class ScheduleLeadConversion implements Schedulable {
+    global void execute(SchedulableContext SC) {
+        // Instantiate the batch class
+        ConvertLeadsBatch batchJob = new ConvertLeadsBatch();
+        
+        // Execute the batch job
+        Database.executeBatch(batchJob);
+    }
+}
